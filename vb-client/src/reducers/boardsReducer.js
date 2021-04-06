@@ -19,7 +19,7 @@ const initialState = {
       case "ADD_BOARDS":
         return {
           ...state,
-          boards: [...state.boards, action.boards]
+          boards: [...state.boards, action.board]
         }
       default:
         return state;

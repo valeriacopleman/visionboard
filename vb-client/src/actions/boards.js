@@ -7,7 +7,7 @@ export const getBoards = () => {
     }
 }
 
-export const addBlog = (board, history) => {
+export const addBoard = (board) => {
     return dispatch => {
       fetch('http://localhost:3001/boards', {
         method: "POST",
@@ -20,7 +20,7 @@ export const addBlog = (board, history) => {
         .then(resp => resp.json())
         .then(board => {
           dispatch({ type: "ADD_BOARD", board })
-          history.push("/boards")
+          //history.push("/board")
         })
     }
   }

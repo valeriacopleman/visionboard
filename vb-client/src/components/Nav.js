@@ -8,7 +8,7 @@ class Nav extends Component {
                 <ul>
                     <button><Link to="/">Home</Link></button>
                     <button><Link to="/boards">Vision Boards</Link></button>
-                    
+                    <button><Link to="/boards/new">Create Board</Link></button>
                 </ul>
             </div>
         )
