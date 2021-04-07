@@ -1,19 +1,20 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
 
 class Board extends Component {
     render() {
-        const { title, createdby, description } = this.props
+        const { title, createdby, id, created_at } = this.props
         return (
-            <>
-          
+            
             <div>
-                <h3>{ title }</h3>
+                <Link to={`/boards/${id}`}><h3>{ title }</h3></Link>
                 <li>Created By: { createdby }</li>
-                <p>{ description }</p>
-                
+                <p>{created_at}</p>
                 
             </div>
-            </>
+            
+            
+            
         )
     }
 }

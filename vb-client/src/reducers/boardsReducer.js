@@ -16,11 +16,21 @@ const initialState = {
           loading: false,
           boards: action.boards
         }
+      case "SHOW_BOARD":
+        return {
+          ...state,
+          showBoard: action.board
+        }
       case "ADD_BOARDS":
         return {
           ...state,
           boards: [...state.boards, action.board]
         }
+        case "DELETE_BOARD":
+          return {
+            ...state,
+            boards: [...state.boards.filter(board => board.id !== action.boardId)]
+          }
       default:
         return state;
     }

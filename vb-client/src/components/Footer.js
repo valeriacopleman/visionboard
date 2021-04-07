@@ -5,8 +5,11 @@ class Footer extends Component {
         return (
             
             <div>
-                &copy; Property of VisionBoard
+                 <br />
+               <p> &copy; Property of VisionBoard</p>
+                
             </div>
+          
         )
     }
 }

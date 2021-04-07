@@ -7,7 +7,7 @@ export const getBoards = () => {
     }
 }
 
-export const addBoard = (board) => {
+export const addBoard = (board, history) => {
     return dispatch => {
       fetch('http://localhost:3001/boards', {
         method: "POST",
@@ -20,8 +20,36 @@ export const addBoard = (board) => {
         .then(resp => resp.json())
         .then(board => {
           dispatch({ type: "ADD_BOARD", board })
-          //history.push("/board")
+          history.push("/boards")
         })
     }
   }
+
+  export const showBoard = (boardId) => {
+    return dispatch => {
+      fetch(`http://localhost:3001/boards/${boardId}`)
+      .then(resp => resp.json())
+      .then(board => dispatch({
+        type: "SHOW_BOARD",
+        board
+      }))
+    }
+  }
+
+  export const deleteBoard = (boardId) => {
+    return (dispatch) => {
+      return  fetch(`http://localhost:3001/boards/${boardId}`, {
+        method: 'DELETE',
+      })
+      .then(resp => resp.json())
+      .then(() => {
+        dispatch({
+        type: "DELETE_BOARD",
+        boardId
+        })
+        
+      })
+    }
+  }
+  
   

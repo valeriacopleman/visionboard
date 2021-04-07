@@ -8,6 +8,7 @@ class Home extends Component {
             <div>
                 <h1>Welcome!</h1>
                 <h3>Affirmations?</h3>
+                
             </div>
         )
     }

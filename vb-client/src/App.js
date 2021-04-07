@@ -1,4 +1,4 @@
-import './App.css'
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
@@ -9,7 +9,7 @@ import Nav from './components/Nav'
 import boardIndex from './components/boardIndex'
 import { getBoards } from './actions/boards';
 import Form from './components/Form'
-
+import Showboard from './components/Showboard'
 
 class App extends Component {
   
@@ -30,6 +30,8 @@ class App extends Component {
               <Route exact path="/" component={ Home }/>
               <Route exact path="/boards" component={ boardIndex }/>
               <Route exact path="/boards/new" component={ Form }/>
+              <Route path='/boards/:id' component={ Showboard } />
+              
               <Route component={ErrorPage}/>
             </Switch>
           </div>
